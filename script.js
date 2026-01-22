@@ -1,13 +1,14 @@
 let saida = "";
 let tipoConversor = 0;
 
-do {
-  saida += "Calculadora de conversões:\n";
-  saida += "Escolha uma opção:\n\n";
-  saida += "1 - Celsius para Fahrenheit\n";
-  saida += "2 - Quilômetros para Milhas\n";
-  saida += "3 - Sair\n\n";
+// Mostra o menu UMA ÚNICA VEZ na tela
+saida += "Calculadora de conversões:\n";
+saida += "Escolha uma opção:\n\n";
+saida += "1 - Celsius para Fahrenheit\n";
+saida += "2 - Quilômetros para Milhas\n";
+saida += "3 - Sair\n\n";
 
+do {
   tipoConversor = parseInt(prompt(
     "Calculadora de conversões:\n\n" +
     "1 - Celsius para Fahrenheit\n" +
@@ -18,7 +19,7 @@ do {
 
   // Opção sair
   if (tipoConversor === 3) {
-    saida += "Programa encerrado.\n";
+    saida += "\nPrograma encerrado.\n";
     break;
   }
 
@@ -43,9 +44,10 @@ do {
       break;
   }
 
-  saida += mensagem + "\n\n";
+  // Só adiciona o RESULTADO agora
+  saida += mensagem + "\n";
 
-} while (tipoConversor < 3);
+} while (tipoConversor !== 3);
 
 // Exibe tudo na tela
 document.getElementById("saida").textContent = saida;
